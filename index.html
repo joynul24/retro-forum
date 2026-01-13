@@ -14,8 +14,8 @@
 </head>
 <body>
     <header>
-        <!-- Navber -->
-        <nav class="container px-2 md:px-0 py-5 md:py-10 flex justify-between items-center">
+    <!-- Navber -->
+    <nav class="container px-2 md:px-0 py-5 md:py-10 flex justify-between items-center">
            <!-- logo -->
             <div>
                 <img class="w-16 md:w-auto" src="./images/logo.png" alt="">
@@ -33,9 +33,29 @@
                 <!-- mobile device icon -->
                  <button class="btn md:hidden"><i class="fa-solid fa-bars"></i></button>
              </div>
-        </nav>
-        <!-- Banner -->
-         <section></section>
+    </nav>
+    <!-- Banner -->
+    <section class="container px-2 md:px-0 font-mulish">
+     <div class="flex flex-col-reverse md:flex-row justify-between items-center nav-banner p-7 md:p-24 md:mt-5">
+      <!-- banner content -->
+      <div class="text-white w-full md:w-3/5">
+        <h2 class="text-2xl md:text-4xl lg:text-6xl font-black md:leading-18">Welcome to the ReTro Forum</h2>
+        <p class="text-gray-400 my-3 md:my-4">Share your favorite opinion and win and wp forum coffee mug!</p>
+        <!-- Search Field -->
+         <div class="flex justify-between bg-white p-3 rounded-full md:w-3/4 mt-5 md:mt-8">
+            <input class="text-black w-full outline-none border-none font-medium md:text-xl pl-4" type="text" placeholder="Search here anything">
+             <button class="btn rounded-full bg-[#797DFC] text-white border-none">Search</button>
+         </div>
+      </div>
+       <!-- banner statistics -->
+       <div class="bg-white p-6 md:p-12 rounded-3xl w-full md:w-2/5 mb-8 md:mb-0 flex flex-col space-y-2">
+         <div class="flex justify-between items-center text-xl font-medium text-gray-600"><p>Registered Users</p><p>01</p></div>
+         <div class="flex justify-between items-center text-xl font-medium text-gray-600"><p>Forum</p><p>05</p></div>
+         <div class="flex justify-between items-center text-xl font-medium text-gray-600"><p>Topics</p><p>07</p></div>
+         <div class="flex justify-between items-center text-xl font-medium text-gray-600"><p>Replies</p><p>08</p></div>
+       </div>
+    </div>
+    </section>
     </header>
 </body>
 </html>

@@ -1,4 +1,23 @@
-.container{
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.font-mulish {
+    font-family: "Mulish", sans-serif;
+}
+
+.font-inter {
+    font-family: "Inter", sans-serif;
+}
+
+.container {
     max-width: 1170px;
     margin: 0 auto;
+}
+
+.nav-banner {
+    background-color: #12132D;
+    border-radius: 32px;
+    background-image: url("./images/bgbanner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
