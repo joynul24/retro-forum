@@ -43,8 +43,8 @@
         <p class="text-gray-400 my-3 md:my-4">Share your favorite opinion and win and wp forum coffee mug!</p>
         <!-- Search Field -->
          <div class="flex justify-between bg-white p-3 rounded-full md:w-3/4 mt-5 md:mt-8">
-            <input class="text-black w-full outline-none border-none font-medium md:text-xl pl-4" type="text" placeholder="Search here anything">
-             <button class="btn rounded-full bg-[#797DFC] text-white border-none">Search</button>
+            <input id="search-input" class="text-black w-full outline-none border-none font-medium md:text-xl pl-4" type="text" placeholder="Search here anything">
+             <button onclick="handleSearchByCategory()" class="btn rounded-full bg-[#797DFC] text-white border-none">Search</button>
          </div>
       </div>
        <!-- banner statistics -->
@@ -68,46 +68,9 @@
             </div>
             <!-- All discuss cards -->
              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            <!-- cards -->
-        <div class="md:col-span-2">
-        <div class="flex flex-col md:flex-row gap-5 rounded-3xl p-6 md:p-10 bg-gray-100">
-    <!-- img -->
-    <div>
-        <div class="flex justify-center md:justify-start">
-      <div class="avatar avatar-online">
-        <div class="w-24 rounded-full">
-          <img src="https://img.daisyui.com/images/profile/demo/gordon@192.webp" />
-        </div>
-      </div>
-    </div>
-    </div>
-    <!-- content -->
-    <div class="w-full flex flex-col space-y-3">
-      <div class="flex flex-col sm:flex-row sm:items-center sm:gap-6 text-lg md:text-xl font-mulish text-gray-600 font-bold">
-        <p>Category: <span></span>N/M</p>
-        <p>Author: <span>N/M</span></p>
-      </div>
-      <!-- title -->
-      <h2 class="text-xl md:text-2xl font-bold font-mulish">Title</h2>
-      <p class="text-gray-600 font-inter text-sm md:text-base">Description</p>
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div class="flex items-center gap-6">
-          <p class="text-gray-600 text-base md:text-xl font-medium flex items-center gap-2">
-            <i class="fa-solid fa-comment-dots"></i><span>560</span>
-          </p>
-          <p class="text-gray-600 text-base md:text-xl font-medium flex items-center gap-2">
-            <i class="fa-solid fa-eye"></i><span>560</span>
-          </p>
-          <p class="text-gray-600 text-base md:text-xl font-medium flex items-center gap-2">
-            <i class="fa-solid fa-clock"></i><span>560</span>
-          </p>
-        </div>
-        <button class="btn rounded-full bg-[#10B981] text-white border-none">
-         <i class="fa-solid fa-envelope-open"></i>
-          </button>
-         </div>
-       </div>
-        </div>
+           <div id="post-container" class="md:col-span-2">
+          <!-- cards -->
+
          </div>
 
             <!-- marks as read -->
@@ -213,5 +176,6 @@
              </div>
           </footer>
     </main>
+<script src="./app.js"></script>
 </body>
 </html>
