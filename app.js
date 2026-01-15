@@ -96,3 +96,63 @@ const handleMarkAsRead = (title, view, btn) => {
   btn.disabled = true;
   btn.classList.add("opacity-50", "cursor-not-allowed");
 }
+
+
+
+const latestPost = async()=> {
+  const res = await fetch("https://openapi.programming-hero.com/api/retro-forum/latest-posts");
+  const data = await res.json()
+  displayLatestPosts(data)
+};
+
+latestPost()
+
+
+const displayLatestPosts = (posts) => {
+  const latestPostContainer = document.getElementById("latestPostContainer");
+  
+  posts.forEach(post => {
+    const div = document.createElement("div");
+    div.innerHTML = `
+     <div class="card bg-base-100 shadow-sm p-4 sm:p-5 md:p-6 font-mulish bg-gray-100">
+       <!-- image -->
+        <figure>
+       <img
+      src="${post.cover_image}"
+      alt="latest-post"
+      class="rounded-xl w-full object-cover"
+        />
+        </figure>
+
+  <!-- body -->
+  <div class="card-body">
+    <h4 class="text-gray-600 text-sm md:text-base flex items-center gap-2">
+      <i class="fa-solid fa-calendar"></i> <span>${post.author.posted_date? post.author.posted_date : "No publish date"}</span>
+    </h4>
+    <h2 class="card-title text-lg md:text-xl">${post.title}</h2>
+    <p class="text-gray-700 text-sm md:text-base">
+       ${post.description}
+    </p>
+
+    <!-- profile -->
+    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 mt-4">
+      <!-- profile img -->
+      <div class="flex justify-center sm:justify-start">
+        <div class="avatar avatar-online">
+          <div class="w-[44px] sm:w-[52px] md:w-[60px] rounded-full">
+            <img src="${post.profile_image}" />
+          </div>
+        </div>
+      </div>
+      <!-- info -->
+      <div class="text-center sm:text-left">
+        <h3 class="text-base sm:text-lg md:text-xl font-bold">${post.author.name}</h3>
+        <p class="text-gray-600 text-sm md:text-base">${post.author.designation? post.author.designation : "Unknown"}</p>
+      </div>
+    </div>
+     </div>
+    </div>
+    `
+    latestPostContainer.appendChild(div);
+  });
+}
