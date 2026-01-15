@@ -57,7 +57,7 @@ const displayAllPosts = (posts) => {
             <i class="fa-solid fa-clock"></i><span>${post.posted_time}</span>
           </p>
         </div>
-        <button class="btn rounded-full bg-[#10B981] text-white border-none">
+        <button onclick="handleMarkAsRead(&quot;${post.title}&quot;, ${post.view_count}, this)" class="btn rounded-full bg-[#10B981] text-white border-none">
          <i class="fa-solid fa-envelope-open"></i>
           </button>
          </div>
@@ -73,4 +73,26 @@ const handleSearchByCategory = () => {
     const search = document.getElementById("search-input").value;
     loadAllPost(search);
     document.getElementById("search-input").value = "";
+}
+
+
+
+const handleMarkAsRead = (title, view, btn) => {
+  const markReadContainer = document.getElementById("markReadContainer");
+
+  const markReadCount = Number(document.getElementById("mark-read-count").innerText);
+  const updateCount = markReadCount + 1;
+  document.getElementById("mark-read-count").innerText = updateCount;
+
+  const div = document.createElement("div");
+  div.innerHTML = `
+          <div class="flex justify-between items-center p-4 bg-white rounded-xl mt-3 md:mt-4">
+          <h3 class="text-xs font-medium text-gray-600 font-mulish">${title}</h3>
+          <p class="flex gap-1 justify-between items-center  text-gray-600 font-inter"><i class="fa-solid fa-eye"></i> <span>${view}</span></p>
+          </div>
+  `
+  markReadContainer.appendChild(div);
+  
+  btn.disabled = true;
+  btn.classList.add("opacity-50", "cursor-not-allowed");
 }
